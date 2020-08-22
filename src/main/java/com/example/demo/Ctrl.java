@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import java.util.Date;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,6 +11,8 @@ public class Ctrl {
 
     @GetMapping("ping")
     public ResponseEntity<String> ping() {
-        return new ResponseEntity<>("Ok from Mac", HttpStatus.OK);
+        Date d = new Date();
+        System.out.println(d.toString());
+        return new ResponseEntity<>("Ok from " + DemoApplication.aa, HttpStatus.OK);
     }
 }
